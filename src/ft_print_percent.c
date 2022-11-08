@@ -6,11 +6,11 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:40:29 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 20:42:54 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/08 21:01:39 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <unistd.h>
 
 int	ft_print_percent(void)
 {

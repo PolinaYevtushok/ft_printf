@@ -6,9 +6,11 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:33:15 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 20:37:18 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/08 21:01:23 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 int	ft_print_uint(unsigned int n)
 {

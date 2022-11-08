@@ -6,11 +6,11 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:27:33 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 20:27:58 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/08 21:00:52 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_print_ptr(unsigned long long ptr)
-{
+// int	ft_print_ptr(unsigned long long ptr)
+// {
 	
-}
+// }

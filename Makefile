@@ -1,7 +1,15 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRC_LIST = ft_printf.c
+SRC_LIST =	ft_printf.c 		\
+			ft_print_arg.c 		\
+			ft_print_char.c 	\
+			ft_print_str.c 		\
+			ft_print_hex.c 		\
+			ft_print_int.c 		\
+			ft_print_uint.c 	\
+			ft_print_ptr.c 		\
+			ft_print_percent.c 
 INC = libft
 OBJ_DIR = obj/
 SRC_DIR = src/
