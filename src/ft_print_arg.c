@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:04:36 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 21:02:46 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/10 17:11:25 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_print_arg(va_list args, const char c)
 		printed_chars += ft_print_char(va_arg(args, int));
 	else if (c == 's')
 		printed_chars += ft_print_str(va_arg(args, char *));
-	// else if (c == 'p')
-	// 	printed_chars += ft_print_ptr(va_arg(args, unsigned long long));
+	else if (c == 'p')
+		printed_chars += ft_print_ptr(va_arg(args, unsigned long long));
 	else if (c == 'd' || c == 'i')
 		printed_chars += ft_print_int(va_arg(args, int));
 	else if (c == 'u')
