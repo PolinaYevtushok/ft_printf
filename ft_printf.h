@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 19:18:59 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 20:50:47 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/10 17:38:56 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_print_str(char *str);
 int	ft_print_ptr(unsigned long long ptr);
 int	ft_print_int(int n);
 int	ft_print_uint(unsigned int n);
-int	ft_print_hex(unsigned int n, char c);
+int	ft_print_hex(unsigned int n, int format);
 int	ft_print_percent(void);
 
 #endif

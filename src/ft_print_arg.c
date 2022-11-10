@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:04:36 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/10 17:11:25 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/10 17:42:23 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	ft_print_arg(va_list args, const char c)
 		printed_chars += ft_print_int(va_arg(args, int));
 	else if (c == 'u')
 		printed_chars += ft_print_uint(va_arg(args, unsigned int));
-	// else if (c == 'x' || c == 'X')
-	// 	printed_chars += ft_print_hex(va_arg(args, unsigned int), c);
+	else if (c == 'x' || c == 'X')
+		printed_chars += ft_print_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
 		printed_chars += ft_print_percent();
 	return (printed_chars);
