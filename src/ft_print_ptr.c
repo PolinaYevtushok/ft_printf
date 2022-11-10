@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:27:33 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/10 17:22:35 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/10 18:02:59 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	ft_print_ptr(unsigned long long ptr)
 	int	printed_chars;
 
 	printed_chars = write(1, "0x", 2);
-	if (!ptr)
-		printed_chars += write(1, "0", 1);
 	printed_chars += ft_convert_ptr(ptr);
 	return (printed_chars);
 }
