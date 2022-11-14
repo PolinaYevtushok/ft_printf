@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:40:29 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 21:01:39 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/14 18:05:47 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_print_percent(void)
 {
-	write(1, "%", 1);
-	return (1);
+	return (write(1, "%", 1));
 }

@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 19:17:56 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 20:04:14 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/14 18:14:37 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_printf(const char *str, ...)
 {
 	int		i;
 	int		printed_chars;
+	int		char_was_printed;
 	va_list	args;
 
 	va_start(args, str);
@@ -27,10 +28,13 @@ int	ft_printf(const char *str, ...)
 			printed_chars += ft_print_char(str[i]);
 		else
 		{
-			printed_chars += ft_print_arg(args, str[i + 1]);
-			++i;
+			char_was_printed = ft_print_arg(args, str[i + 1]);
+			if (char_was_printed != 0)
+				++i;
+			printed_chars += char_was_printed;
 		}
 		++i;
 	}
+	va_end(args);
 	return (printed_chars);
 }

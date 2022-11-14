@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 19:56:46 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/08 19:58:29 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/14 18:04:21 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_print_char(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
