@@ -6,7 +6,7 @@
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 20:04:36 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/11/10 17:53:32 by pyevtush      ########   odam.nl         */
+/*   Updated: 2022/11/14 18:55:26 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int	ft_print_arg(va_list args, const char c)
 		printed_chars += ft_print_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
 		printed_chars += ft_print_percent();
+	else
+		return (-42);
 	return (printed_chars);
 }
