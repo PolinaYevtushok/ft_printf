@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstadd_front_bonus.c                            :+:    :+:            */
+/*   ft_calloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/16 18:52:51 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/23 13:52:27 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/06 13:56:30 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/07 17:35:13 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include "../libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	void	*res;
+
+	res = (void *)malloc(count * size);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, size * count);
+	return (res);
 }

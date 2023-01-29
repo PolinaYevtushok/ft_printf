@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putendl_fd.c                                    :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/08 18:07:49 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/23 13:24:52 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/04 12:34:03 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/07 17:35:13 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_atoi(const char *str)
 {
-	if (s)
+	int	res;
+	int	i;
+	int	sign;
+
+	if (!str)
+		return (0);
+	res = 0;
+	i = 0;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		ft_putstr_fd(s, fd);
-		write(fd, "\n", 1);
+		++i;
 	}
+	if (str[i] == 45 || str[i] == 43)
+	{
+		if (str[i] == 45)
+			sign = -1;
+		++i;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		res = (res * 10) + (str[i] - 48);
+		++i;
+	}
+	return (res * sign);
 }

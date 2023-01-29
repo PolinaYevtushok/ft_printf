@@ -48,6 +48,8 @@ BONUS_SRC =	ft_lstnew_bonus.c			\
 
 INC = libft.h
 OBJ_DIR = obj/
+SRC_DIR = src/
+
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 BONUS_OBJ = $(addprefix $(OBJ_DIR), $(BONUS_SRC:.c=.o))
 
@@ -65,7 +67,7 @@ $(NAME): $(OBJ_FILES)
 bonus : 
 	@$(MAKE) BONUS=1 all
 
-$(OBJ_DIR)%.o: %.c $(INC)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(FLAGS) -c -o $@ $<
 

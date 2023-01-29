@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstnew_bonus.c                                  :+:    :+:            */
+/*   ft_bzero.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/16 18:54:10 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/16 18:54:12 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/04 14:01:53 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/07 17:35:13 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <stddef.h>
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_bzero(void *s, size_t n)
 {
-	t_list	*node;
-
-	node = (t_list *)malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	ft_memset(s, 0, n);
 }

@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strjoin.c                                       :+:    :+:            */
+/*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/06 16:37:10 by pyevtush      #+#    #+#                 */
+/*   Created: 2022/10/05 17:59:22 by pyevtush      #+#    #+#                 */
 /*   Updated: 2022/10/07 17:35:13 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	s1_len;
-	size_t	s2_len;
+	size_t	start;
 	size_t	i;
-	size_t	j;
-	char	*res;
 
-	if (!s1 && !s2)
+	start = 0;
+	if (!haystack || !needle)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	res = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < s1_len)
-		res[j++] = s1[i++];
-	i = 0;
-	while (i < s2_len)
-		res[j++] = s2[i++];
-	res[j] = '\0';
-	return (res);
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (start < len && haystack[start])
+	{
+		i = 0;
+		while (needle[i] && haystack[start + i] && start + i < len)
+		{
+			if (haystack[start + i] == needle[i])
+				++i;
+			else
+				break ;
+		}
+		if (needle[i] == '\0')
+			return ((char *)haystack + start);
+		else
+			++start;
+	}
+	return (NULL);
 }

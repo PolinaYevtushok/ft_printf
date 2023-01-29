@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 12:34:03 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/07 17:35:13 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/08 16:44:07 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/24 17:43:16 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include "../libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	res;
-	int	i;
-	int	sign;
+	int		len;
+	int		i;
+	char	*res;
 
-	if (!str)
-		return (0);
-	res = 0;
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	res = (char *)malloc((len + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	i = 0;
-	sign = 1;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (s[i])
 	{
+		res[i] = f(i, s[i]);
 		++i;
 	}
-	if (str[i] == 45 || str[i] == 43)
-	{
-		if (str[i] == 45)
-			sign = -1;
-		++i;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		res = (res * 10) + (str[i] - 48);
-		++i;
-	}
-	return (res * sign);
+	res[i] = '\0';
+	return (res);
 }

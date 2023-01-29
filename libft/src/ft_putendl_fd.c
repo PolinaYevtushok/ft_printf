@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.c                                       :+:    :+:            */
+/*   ft_putendl_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/05 16:59:27 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/23 13:46:42 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/08 18:07:49 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/23 13:24:52 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include "../libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	if (!dst || !src)
-		return (0);
-	i = 0;
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	while (i < dstsize - 1 && src[i])
+	if (s)
 	{
-		dst[i] = src[i];
-		++i;
+		ft_putstr_fd(s, fd);
+		write(fd, "\n", 1);
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
 }

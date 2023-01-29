@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap_bonus.c                                  :+:    :+:            */
+/*   ft_lstlast_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: pyevtush <pyevtush@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/16 18:54:05 by pyevtush      #+#    #+#                 */
-/*   Updated: 2022/10/28 19:47:33 by pyevtush      ########   odam.nl         */
+/*   Created: 2022/10/16 18:53:59 by pyevtush      #+#    #+#                 */
+/*   Updated: 2022/10/16 18:54:01 by pyevtush      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*head;
-	t_list	*new;
-	void	*content;
-
-	if (!lst || !f || !del)
+	if (!lst)
 		return (NULL);
-	head = NULL;
-	while (lst)
-	{
-		content = f(lst->content);
-		new = ft_lstnew(content);
-		if (!new)
-		{
-			del(content);
-			ft_lstclear(&head, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&head, new);
+	while (lst->next)
 		lst = lst->next;
-	}
-	return (head);
+	return (lst);
 }
